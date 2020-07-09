@@ -1,5 +1,18 @@
-# tokenkeycode.py というファイル名で以下の行を保存する 
-# TOKEN = 'xxxxxxxxxxxxxxxxxxxxxxxx.yyyyyy.zzzzzzzzzzzzzzzzzzzzzzzzzzz'
+import asyncio
+import discord
+from discord.ext import tasks
+import datetime
+import json
+import glob
+import os
+import codecs
+import random
+from typing import List, Dict, Any, Optional
+from io import StringIO
+#from PIL import Image
+#import numpy as np
+
+DISCORD_BOT_TOKEN = os.environ['DISCORD_BOT_TOKEN']
 
 inputchannel = '凸報告'
 outputchannel = '状況報告'
@@ -55,21 +68,6 @@ for l in BossHpData:
 
 GachaData = []
 
-import tokenkeycode
-
-import asyncio
-import discord
-from discord.ext import tasks
-import datetime 
-import json
-import glob
-import os
-import codecs
-import random
-from typing import List, Dict, Any, Optional
-from io import StringIO
-#from PIL import Image
-#import numpy as np
 
 BOSSNUMBER = len(BossName)
 
@@ -1576,5 +1574,5 @@ GlobalStrage.Load()
 loop.start()
 
 # Botの起動とDiscordサーバーへの接続
-client.run(tokenkeycode.TOKEN)
+client.run(DISCORD_BOT_TOKEN)
 
